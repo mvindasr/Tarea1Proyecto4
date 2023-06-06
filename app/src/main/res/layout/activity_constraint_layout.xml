@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Level 1 -->
+
+    <View
+        android:id="@+id/image_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/lilac"
+        app:layout_constraintBottom_toTopOf="@id/form_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0.3" />
+
+    <View
+        android:id="@+id/form_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_view"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/image_view"
+        app:layout_constraintVertical_weight="0.5" />
+
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/form_view"
+        app:layout_constraintVertical_weight="0.2" />
+
+
+    <!-- Level 2 -->
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageview_profile"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/empty_profile"
+        app:layout_constraintBottom_toBottomOf="@id/image_view"
+        app:layout_constraintEnd_toEndOf="@id/image_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/image_view"
+        app:layout_constraintTop_toTopOf="@id/image_view"
+        app:shapeAppearanceOverlay="@style/Circular" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rect_rounded_button"
+        android:text="Guardar Perfil"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_view"
+        app:layout_constraintEnd_toEndOf="@id/bottom_view"
+        app:layout_constraintStart_toStartOf="@id/bottom_view"
+        app:layout_constraintTop_toTopOf="@id/bottom_view" />
+
+
+    <View
+        android:id="@+id/name_form_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/bottom_borderline"
+        app:layout_constraintTop_toTopOf="@id/form_view"
+        app:layout_constraintBottom_toTopOf="@id/surname_form_view"
+        app:layout_constraintEnd_toEndOf="@id/form_view"
+        app:layout_constraintStart_toStartOf="@id/form_view"/>
+
+    <View
+        android:id="@+id/surname_form_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/bottom_borderline"
+        app:layout_constraintTop_toBottomOf="@id/name_form_view"
+        app:layout_constraintBottom_toTopOf="@id/second_surname_form_view"
+        app:layout_constraintEnd_toEndOf="@id/form_view"
+        app:layout_constraintStart_toStartOf="@id/form_view"/>
+
+    <View
+        android:id="@+id/second_surname_form_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/bottom_borderline"
+        app:layout_constraintTop_toBottomOf="@id/surname_form_view"
+        app:layout_constraintBottom_toTopOf="@id/telephone_form_view"
+        app:layout_constraintEnd_toEndOf="@id/form_view"
+        app:layout_constraintStart_toStartOf="@id/form_view"/>
+
+    <View
+        android:id="@+id/telephone_form_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="2dp"
+        android:layout_marginVertical="5dp"
+        app:layout_constraintTop_toBottomOf="@id/second_surname_form_view"
+        app:layout_constraintBottom_toBottomOf="@id/form_view"
+        app:layout_constraintEnd_toEndOf="@id/form_view"
+        app:layout_constraintStart_toStartOf="@id/form_view"/>
+
+    <!-- Level 3 -->
+
+    <TextView
+        android:id="@+id/name_textview"
+        android:text="Nombre"
+        style="@style/HeaderForm"
+        app:layout_constraintTop_toTopOf="@id/name_form_view"
+        app:layout_constraintBottom_toBottomOf="@id/name_form_view"
+        app:layout_constraintStart_toStartOf="@id/name_form_view"
+        app:layout_constraintEnd_toStartOf="@id/name_edit"
+        app:layout_constraintHorizontal_weight="0.4"/>
+
+    <EditText
+        android:id="@+id/name_edit"
+        style="@style/InputForm"
+        android:backgroundTint="@color/black"
+        android:hint="Gustavo"
+        app:layout_constraintBottom_toBottomOf="@id/name_form_view"
+        app:layout_constraintEnd_toEndOf="@id/name_form_view"
+        app:layout_constraintStart_toEndOf="@id/name_textview"
+        app:layout_constraintTop_toTopOf="@id/name_form_view"
+        app:layout_constraintHorizontal_weight="0.6"/>
+
+    <TextView
+        android:id="@+id/surname_textview"
+        android:text="Primer Apellido"
+        style="@style/HeaderForm"
+        app:layout_constraintTop_toTopOf="@id/surname_form_view"
+        app:layout_constraintBottom_toBottomOf="@id/surname_form_view"
+        app:layout_constraintStart_toStartOf="@id/surname_form_view"
+        app:layout_constraintEnd_toStartOf="@id/surname_edit"
+        app:layout_constraintHorizontal_weight="0.4"/>
+
+    <EditText
+        android:id="@+id/surname_edit"
+        style="@style/InputForm"
+        android:backgroundTint="@color/black"
+        android:hint="Quesada"
+        app:layout_constraintBottom_toBottomOf="@id/surname_form_view"
+        app:layout_constraintEnd_toEndOf="@id/surname_form_view"
+        app:layout_constraintStart_toEndOf="@id/surname_textview"
+        app:layout_constraintTop_toTopOf="@id/surname_form_view"
+        app:layout_constraintHorizontal_weight="0.6"/>
+
+    <TextView
+        android:id="@+id/second_surname_textview"
+        android:text="Segundo Apellido"
+        style="@style/HeaderForm"
+        app:layout_constraintTop_toTopOf="@id/second_surname_form_view"
+        app:layout_constraintBottom_toBottomOf="@id/second_surname_form_view"
+        app:layout_constraintStart_toStartOf="@id/second_surname_form_view"
+        app:layout_constraintEnd_toStartOf="@id/second_surname_edit"
+        app:layout_constraintHorizontal_weight="0.4"/>
+
+    <EditText
+        android:id="@+id/second_surname_edit"
+        style="@style/InputForm"
+        android:backgroundTint="@color/black"
+        android:hint="Sánchez"
+        app:layout_constraintBottom_toBottomOf="@id/second_surname_form_view"
+        app:layout_constraintEnd_toEndOf="@id/second_surname_form_view"
+        app:layout_constraintStart_toEndOf="@id/second_surname_textview"
+        app:layout_constraintTop_toTopOf="@id/second_surname_form_view"
+        app:layout_constraintHorizontal_weight="0.6"/>
+
+    <TextView
+        android:id="@+id/telephone_textview"
+        android:text="Teléfono"
+        style="@style/HeaderForm"
+        app:layout_constraintTop_toTopOf="@id/telephone_form_view"
+        app:layout_constraintBottom_toBottomOf="@id/telephone_form_view"
+        app:layout_constraintStart_toStartOf="@id/telephone_form_view"
+        app:layout_constraintEnd_toStartOf="@id/telephone_edit"
+        app:layout_constraintHorizontal_weight="0.4"/>
+
+    <EditText
+        android:id="@+id/telephone_edit"
+        style="@style/InputForm"
+        android:backgroundTint="@color/black"
+        android:hint="8888 8888"
+        app:layout_constraintBottom_toBottomOf="@id/telephone_form_view"
+        app:layout_constraintEnd_toEndOf="@id/telephone_form_view"
+        app:layout_constraintStart_toEndOf="@id/telephone_textview"
+        app:layout_constraintTop_toTopOf="@id/telephone_form_view"
+        app:layout_constraintHorizontal_weight="0.6"/>
+
+
+    <!-- Guidelines -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
